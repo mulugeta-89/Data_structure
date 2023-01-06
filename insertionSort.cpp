@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int insertionSort(int arr[],int n){
+	int key, j;
+	for(int i = 0; i < n; i++){
+		key = arr[i];
+		j = i-1;
+		while(j >= 0 && arr[j] > key){
+			arr[j + 1] = arr[j];
+			j = j -1;
+			cout << j << endl;
+		}
+		arr[j+1] = key;
+	}
+	
+	for(int i =0; i < n; i++){
+		cout << arr[i] << " ";
+	}
+}
+int main(){
+	int arr[] = {1,4,5,6,7,5,4,3};
+	int n = sizeof(arr)/sizeof(int);
+	insertionSort(arr, n);
+	return 0;
+}
